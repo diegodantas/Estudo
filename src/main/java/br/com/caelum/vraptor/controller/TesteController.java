@@ -10,18 +10,19 @@ import br.com.caelum.vraptor.DAO.EstudoDAO;
 
 @Controller
 public class TesteController {
-	
+
 	@Inject
 	private EstudoDAO dao;
-	
+
 	@Inject
 	private Result result;
-	
+
 	@Path("/Teste")
 	public void lista() {
-		
+
+		dao.Persiste();
         result.include("estudo", dao.listaTodos());
-        
+
     }
 
 }

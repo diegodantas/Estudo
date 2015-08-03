@@ -19,14 +19,9 @@ public class IndexController {
 
 	@Path("/")
 	public void index() {
+		
 		result.include("variable", "VRaptor!");
 		
-		Estudo es = new Estudo();
-		
-		es.setFinalizado(true);
-		es.setNome("Teste");
-		
-		entityManager.persist(es);
 	}
 	
 }
