@@ -19,7 +19,8 @@ public class EstudoDAO {
 	private Session session;
 
 	private Criteria criteria;
-
+	
+	/*Exemplo basido de persistencia no BD*/
 	public void Persiste() {
 
 		Estudo es = new Estudo();
@@ -29,7 +30,8 @@ public class EstudoDAO {
 
 		entityManager.persist(es);
 	}
-
+	
+	/*Listar todos usando criteria*/
 	@SuppressWarnings("unchecked")
 	public List<Estudo> listaTodos() {
 
