@@ -20,7 +20,7 @@ public class EstudoDAO {
 
 	private Criteria criteria;
 	
-	/*Exemplo basido de persistencia no BD*/
+	/*Exemplo basico de persistencia no BD*/
 	public void Persiste() {
 
 		Estudo es = new Estudo();
