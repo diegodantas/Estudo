@@ -24,10 +24,8 @@ public class EstudoDAO {
 	public void Persiste() {
 
 		Estudo es = new Estudo();
-
-		es.setFinalizado(true);
-		es.setNome("Teste");
-
+		es.setFinalizado(false);
+		es.setNome("OutrosTeste");
 		entityManager.persist(es);
 	}
 	
@@ -37,7 +35,6 @@ public class EstudoDAO {
 
 		session = entityManager.unwrap(Session.class);
 		criteria = this.session.createCriteria(Estudo.class);
-
 		return criteria.addOrder(Order.asc("Id")).list();
 	}
 
