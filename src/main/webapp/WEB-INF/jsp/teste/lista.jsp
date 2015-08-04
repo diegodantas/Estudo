@@ -10,7 +10,7 @@
 <body>
 	<ul>
 		<c:forEach items="${estudo}" var="teste">
-			<li>${teste.nome} - ${teste.finalizado}</li>
+			<li>${teste.id} - ${teste.nome} - ${teste.finalizado}</li>
 		</c:forEach>
 	</ul>
 </body>
