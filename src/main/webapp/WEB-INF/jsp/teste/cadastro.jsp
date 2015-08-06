@@ -5,24 +5,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Teste</title>
+<title>Cadastro</title>
 </head>
 <body>
-	<ul>
-		<c:forEach items="${estudo}" var="teste">
-			<li>${teste.id}-${teste.nome}- ${teste.finalizado}</li>
-
-			<form action='<c:url value="/Teste/Delete"/>' >
-
-				<input type="submit" name='estudo.Id' value='${teste.id}' />
-
-			</form>
-
-		</c:forEach>
-	</ul>
-
-	<div id="mensagem">
-		<h3>${mensagem}</h3>
-	</div>
+	<form action="<c:url value='/Teste/Cadastro'/>" method="post">
+		Nome: <input type="text" name="estudo.nome" /><br /> Descrição: <input
+			type="checkbox" name="estudo.finalizado" /><br /> <input
+			type="submit" value="Salvar" />
+	</form>
 </body>
 </html>

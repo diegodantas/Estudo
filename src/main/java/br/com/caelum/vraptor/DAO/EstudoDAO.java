@@ -21,14 +21,10 @@ public class EstudoDAO {
 	private Criteria criteria;
 	
 	/*Exemplo basico de persistencia no BD*/
-	public void Persiste() {
-
-		Estudo es = new Estudo();
+	public void Persiste(Estudo estudo) {
 		
-		es.setFinalizado(false);
-		es.setNome("OutrosTeste");
+		entityManager.persist(estudo);
 		
-		entityManager.persist(es);
 	}
 	
 	/*Listar todos usando criteria*/
@@ -40,6 +36,11 @@ public class EstudoDAO {
 		criteria = this.session.createCriteria(Estudo.class);
 		
 		return criteria.addOrder(Order.asc("Id")).list();
+	}
+	
+	public void delete(Estudo estudo){
+		
+		entityManager.remove(estudo);
 	}
 
 }
