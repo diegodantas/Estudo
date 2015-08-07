@@ -41,10 +41,13 @@ public class EstudoDAO {
 		return criteria.addOrder(Order.asc("Id")).list();
 	}
 	
+	/*Deleta um registro usando o ID*/
 	public void delete(Integer Id){
 		
-		estudo = new Estudo();
-		estudo.setId(Id);		
+		estudo.setId(Id);
+		
+		estudo = entityManager.find(Estudo.class,Id);
+		
 		entityManager.remove(estudo);
 	}
 

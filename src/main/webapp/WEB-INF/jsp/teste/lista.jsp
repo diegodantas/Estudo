@@ -12,7 +12,7 @@
 		<c:forEach items="${estudo}" var="teste">
 			<li>${teste.id}-${teste.nome}- ${teste.finalizado}</li>
 			
-			<a href="<c:url value="/Teste/Delete/${teste.id}"/>"> Deletar </a>	
+			<a href="<c:url value="/Teste/Delete/${teste.id}"/>">Deletar</a>	
 
 		</c:forEach>
 	</ul>
