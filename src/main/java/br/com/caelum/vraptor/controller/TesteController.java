@@ -38,11 +38,10 @@ public class TesteController {
 
 	}
 
-	@Path("/Teste/Delete/{Id}")
-	public void deletar(Integer Id) {
-		System.out.println(Id);
-		dao.delete(Id);
-
+	@Path("/Teste/Delete/{id}")
+	public void deletar(Integer id) {
+		dao.delete(id);
+		result.include("mensagem", "Cliente deletado com sucesso");
 		result.redirectTo(TesteController.class).lista();
 	}
 

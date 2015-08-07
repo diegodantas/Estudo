@@ -43,9 +43,7 @@ public class EstudoDAO {
 	
 	/*Deleta um registro usando o ID*/
 	public void delete(Integer Id){
-		
-		estudo.setId(Id);
-		
+			
 		estudo = entityManager.find(Estudo.class,Id);
 		
 		entityManager.remove(estudo);
