@@ -8,7 +8,7 @@
 <title>Cadastro</title>
 </head>
 <body>
-	<form action="<c:url value='/Teste/Cadastro'/>" method="post">
+	<form action="<c:url value='/Teste/Cadastro' />" method="post">
 		Nome: <input type="text" name="estudo.nome" /><br /> Descrição: <input
 			type="checkbox" name="estudo.finalizado" /><br /> <input
 			type="submit" value="Salvar" />

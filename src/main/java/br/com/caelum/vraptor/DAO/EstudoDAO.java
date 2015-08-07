@@ -20,6 +20,9 @@ public class EstudoDAO {
 
 	private Criteria criteria;
 	
+	@Inject
+	private Estudo estudo;
+	
 	/*Exemplo basico de persistencia no BD*/
 	public void Persiste(Estudo estudo) {
 		
@@ -38,8 +41,10 @@ public class EstudoDAO {
 		return criteria.addOrder(Order.asc("Id")).list();
 	}
 	
-	public void delete(Estudo estudo){
+	public void delete(Integer Id){
 		
+		estudo = new Estudo();
+		estudo.setId(Id);		
 		entityManager.remove(estudo);
 	}
 

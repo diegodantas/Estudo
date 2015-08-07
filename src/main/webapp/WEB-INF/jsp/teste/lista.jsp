@@ -11,12 +11,8 @@
 	<ul>
 		<c:forEach items="${estudo}" var="teste">
 			<li>${teste.id}-${teste.nome}- ${teste.finalizado}</li>
-
-			<form action='<c:url value="/Teste/Delete"/>' >
-
-				<input type="submit" name='estudo.Id' value='${teste.id}' />
-
-			</form>
+			
+			<a href="<c:url value="/Teste/Delete/${teste.id}"/>"> Deletar </a>	
 
 		</c:forEach>
 	</ul>

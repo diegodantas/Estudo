@@ -3,6 +3,7 @@ package br.com.caelum.vraptor.controller;
 import javax.inject.Inject;
 
 import br.com.caelum.vraptor.Controller;
+import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.DAO.EstudoDAO;
@@ -38,10 +39,12 @@ public class TesteController {
 		
 	}
 	
-	@Path("/Teste/Delete")
-	public void deletar(Estudo estudo){
-		dao.delete(estudo);
-		System.out.println("Aqui");
+	
+	@Path("/Teste/Delete/{Id}")
+	public void deletar(Integer Id){
+		System.out.println(Id);
+		dao.delete(Id);
+		
 		result.redirectTo(TesteController.class).lista();
 	}
 
