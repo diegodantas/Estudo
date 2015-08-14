@@ -20,7 +20,6 @@ public class EstudoDAO {
 
 	private Criteria criteria;
 	
-	@Inject
 	private Estudo estudo;
 	
 	/*Exemplo basico de persistencia no BD*/
@@ -47,6 +46,12 @@ public class EstudoDAO {
 		estudo = entityManager.find(Estudo.class,Id);
 		
 		entityManager.remove(estudo);
+	}
+	
+	public void update(Estudo est){
+		
+		entityManager.merge(est);
+		
 	}
 
 }
