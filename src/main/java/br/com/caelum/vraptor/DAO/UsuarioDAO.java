@@ -42,23 +42,24 @@ public class UsuarioDAO {
 
 	@SuppressWarnings("unchecked")
 	public List<Usuario> listarTodosUsuarios() {
-
 		session = entityManager.unwrap(Session.class);
+		
 		criteria = this.session.createCriteria(Usuario.class);
 		return criteria.addOrder(Order.asc("Id")).list();
-
 	}
 
 	public boolean existeUsuario(Usuario usuario) {
+		session = entityManager.unwrap(Session.class);
+
 		Usuario encontrado = (Usuario) session.createCriteria(Usuario.class)
-				.add(Restrictions.eq("login", usuario.getNome()))
+				.add(Restrictions.eq("nome", usuario.getNome()))
 				.uniqueResult();
 		return encontrado != null;
 	}
 	
 	public Usuario carrega(Usuario usuario) {
 		session = entityManager.unwrap(Session.class);
-		
+
 	    return (Usuario) session.createCriteria(Usuario.class)
 	      .add(Restrictions.eq("nome", usuario.getNome()))
 	      .add(Restrictions.eq("senha", usuario.getSenha()))
