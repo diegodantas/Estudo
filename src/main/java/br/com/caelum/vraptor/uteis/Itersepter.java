@@ -11,7 +11,7 @@ import br.com.caelum.vraptor.interceptor.SimpleInterceptorStack;
 
 @Intercepts
 @RequestScoped
-public class Uteis {
+public class Itersepter {
 
 	@Inject
     private HttpServletRequest request;
