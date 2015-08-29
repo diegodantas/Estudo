@@ -7,6 +7,7 @@ import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.DAO.UsuarioDAO;
+import br.com.caelum.vraptor.annotations.Public;
 import br.com.caelum.vraptor.model.Usuario;
 import br.com.caelum.vraptor.uteis.UsuarioWeb;
 import br.com.caelum.vraptor.validator.SimpleMessage;
@@ -31,7 +32,8 @@ public class IndexController {
 	 * validator, UsuarioWeb usuarioWeb) { this.result = result; this.validator
 	 * = validator; this.usuarioDao = dao; this.usuarioWeb = usuarioWeb; }
 	 */
-
+	
+	@Public
 	@Path("/")
 	public void index() {
 
@@ -39,6 +41,7 @@ public class IndexController {
 
 	}
 
+	@Public
 	@Post("/Login")
 	public void login(Usuario usuario) {
 

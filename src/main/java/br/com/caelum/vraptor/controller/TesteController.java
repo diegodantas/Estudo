@@ -7,6 +7,7 @@ import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.DAO.EstudoDAO;
 import br.com.caelum.vraptor.model.Estudo;
+import br.com.caelum.vraptor.uteis.UsuarioWeb;
 
 @Controller
 public class TesteController {
@@ -17,6 +18,9 @@ public class TesteController {
 	@SuppressWarnings("cdi-ambiguous-dependency")
 	@Inject
 	private Result result;
+	
+	@Inject
+	private UsuarioWeb usuarioWeb;
 	
 	
 	/*Lista todos os registros e envia para a jsp lista.jsp*/
@@ -36,7 +40,7 @@ public class TesteController {
 
 	@Path("/Teste/Cadastrar")
 	public void cadastro() {
-
+			usuarioWeb.logout();
 	}
 	
 	/*Deleta o registro referente ao ID */

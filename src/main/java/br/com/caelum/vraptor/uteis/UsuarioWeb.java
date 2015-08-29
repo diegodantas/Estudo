@@ -27,4 +27,7 @@ public class UsuarioWeb implements Serializable {
 	public boolean isLogado() {
 		return logado != null;
 	}
+	public void logout(){
+		this.logado = null;
+	}
 }
