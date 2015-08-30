@@ -46,7 +46,7 @@ public class IndexController {
 	}
 	
 	/*
-	 * Faz as verificações para efetuar os login do usuario
+	 * Faz as verificações para efetuar o login do usuario
 	 */
 
 	@Public
@@ -68,7 +68,7 @@ public class IndexController {
 	}
 	
 	/*
-	 * Realiza do logout o usuario
+	 * Realiza p logout do usuario
 	 */
 	
 	@Path("/logout")
