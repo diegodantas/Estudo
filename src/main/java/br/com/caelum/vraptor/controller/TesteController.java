@@ -7,7 +7,6 @@ import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.DAO.EstudoDAO;
 import br.com.caelum.vraptor.model.Estudo;
-import br.com.caelum.vraptor.uteis.UsuarioWeb;
 
 @Controller
 public class TesteController {
@@ -15,12 +14,8 @@ public class TesteController {
 	@Inject
 	private EstudoDAO dao;
 
-	@SuppressWarnings("cdi-ambiguous-dependency")
 	@Inject
 	private Result result;
-	
-	@Inject
-	private UsuarioWeb usuarioWeb;
 	
 	
 	/*Lista todos os registros e envia para a jsp lista.jsp*/
@@ -31,16 +26,18 @@ public class TesteController {
 
 	}
 
+	/*Realiza o cadastro*/
 	@Path("/Teste/Cadastro")
 	public void cadastro(Estudo estudo) {
 		dao.Persiste(estudo);
 		result.include("mensagem", "Cliente adicionado com sucesso");
 		result.redirectTo(TesteController.class).lista();
 	}
-
+	
+	/*Renderiza a tela de cadastro*/
 	@Path("/Teste/Cadastrar")
 	public void cadastro() {
-			usuarioWeb.logout();
+			
 	}
 	
 	/*Deleta o registro referente ao ID */
@@ -51,6 +48,7 @@ public class TesteController {
 		result.redirectTo(TesteController.class).lista();
 	}
 	
+	/*Update*/
 	@Path("/Teste/Atualiza/{id}{nome}{finalizado}")
 	public void update(Integer id, String nome, Boolean finalizado){
 		Estudo estudo = new Estudo();

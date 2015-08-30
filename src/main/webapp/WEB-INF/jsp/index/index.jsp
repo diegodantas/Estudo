@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>VRaptor Blank Project</title>
+<title>Inicio</title>
 <link href="${pageContext.request.contextPath}/css/bootstrap.min.css"
 	rel="stylesheet">
 <link href="${pageContext.request.contextPath}/css/signin.css"
@@ -10,11 +10,8 @@
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 </head>
 <body>
-	<%-- ${linkTo[IndexController].index} ${pageContext.request.contextPath}
-	<a href="Teste/Listar">Listar</a>
-	<a href="Teste/Cadastrar">Cadastrar</a> --%>
 
-	<c:forEach var="error" items="${errors}">
+	<c:forEach items="${errors}" var="error">
 	    ${error.category} - ${error.message}<br />
 	</c:forEach>
 
@@ -32,10 +29,6 @@
 			<button class="btn btn-lg btn-primary btn-block" type="submit">Logar</button>
 		</form>
 
-	</div>
-	
-	<div id="mensagem" class="container">
-		<p class="bg-danger">${error.category} - ${error.message}</p><br />
 	</div>
 
 </body>

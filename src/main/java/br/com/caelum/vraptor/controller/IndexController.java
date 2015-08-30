@@ -16,30 +16,38 @@ import br.com.caelum.vraptor.validator.Validator;
 @Controller
 public class IndexController {
 
-	@SuppressWarnings("cdi-ambiguous-dependency")
 	@Inject
 	private Result result;
 	@Inject
 	private UsuarioWeb usuarioWeb;
 	@Inject
 	private UsuarioDAO usuarioDao;
-	@SuppressWarnings("cdi-ambiguous-dependency")
 	@Inject
 	private Validator validator;
-
+	
+	
 	/*
-	 * public IndexController(UsuarioDAO dao, Result result, Validator
-	 * validator, UsuarioWeb usuarioWeb) { this.result = result; this.validator
-	 * = validator; this.usuarioDao = dao; this.usuarioWeb = usuarioWeb; }
+	 *A annotation "Public" faz com que o metodo anotado com ela seja acessado sem efetuar o login
+	 */
+	
+	/*
+	 * Metodo que renderiza a tela de login caso não tenha usuario logado no momento
 	 */
 	
 	@Public
 	@Path("/")
 	public void index() {
 
-		result.include("variable", "VRaptor!");
+		/*result.include("variable", "VRaptor!");*/
+		if(usuarioWeb.isLogado()){
+			result.redirectTo(TesteController.class).lista();
+		}
 
 	}
+	
+	/*
+	 * Faz as verificações para efetuar os login do usuario
+	 */
 
 	@Public
 	@Post("/Login")
@@ -57,6 +65,16 @@ public class IndexController {
 		usuarioWeb.login(carregado);
 
 		result.redirectTo(TesteController.class).lista();
+	}
+	
+	/*
+	 * Realiza do logout o usuario
+	 */
+	
+	@Path("/logout")
+	public void logout(){
+		usuarioWeb.logout();
+		result.redirectTo(this).index();
 	}
 
 }
