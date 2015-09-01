@@ -11,14 +11,39 @@
 </head>
 <body>
 
-	<div class="container" style="text-align:right">
-		<form class="form-signin" action="/Estudo/logout" method="post">
-			<button class="btn btn-primary btn-lg" type="submit">Logout</button>
-		</form>
+	<div class="container">
+
+		<!-- Static navbar -->
+		<nav class="navbar navbar-">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed"
+						data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+						aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span> <span
+							class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">Vraptor4</a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="/Estudo/Teste/Listar">Home</a></li>
+						<li><a href="/Estudo/Teste/Cadastrar">Cadastrar</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="/Estudo/logout">Logout</a></li>
+					</ul>
+				</div>
+				<!--/.nav-collapse -->
+			</div>
+			<!--/.container-fluid -->
+		</nav>
+
 	</div>
 
 	<div class="container">
-	<h1>Lista de cadastrados</h1>
+		<h1>Lista de cadastrados</h1>
 		<table class="table table-stripped table-hover">
 			<thead>
 				<tr>
