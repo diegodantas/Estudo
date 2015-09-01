@@ -16,12 +16,12 @@ public class Usuario implements Serializable {
 
 	@Id
 	@GeneratedValue
-	private Integer Id;
+	private int Id;
 	
 	private String nome;
 	private String senha;
 	private boolean status;
-	public Integer getId() {
+	public int getId() {
 		return Id;
 	}
 	public void setId(Integer id) {
