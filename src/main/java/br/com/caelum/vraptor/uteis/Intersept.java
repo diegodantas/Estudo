@@ -31,12 +31,12 @@ public class Intersept {
 	
     @AroundCall
     public void intercept(SimpleInterceptorStack stack) {
-        System.out.println("aqui");
+        
     	if(!usuarioWeb.isLogado()){
     		result.redirectTo(IndexController.class).index();
     		return;
     	}
-    	System.out.println(usuarioWeb.getNome());
+    	
         stack.next(); // continua a execução
 
     }

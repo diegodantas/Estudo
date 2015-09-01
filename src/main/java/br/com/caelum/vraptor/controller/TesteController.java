@@ -4,6 +4,7 @@ import javax.inject.Inject;
 
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Path;
+import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.DAO.EstudoDAO;
 import br.com.caelum.vraptor.model.Estudo;
@@ -27,7 +28,7 @@ public class TesteController {
 	}
 
 	/*Realiza o cadastro*/
-	@Path("/Teste/Cadastro")
+	@Post("/Teste/Cadastro")
 	public void cadastro(Estudo estudo) {
 		dao.Persiste(estudo);
 		result.include("mensagem", "Cliente adicionado com sucesso");
