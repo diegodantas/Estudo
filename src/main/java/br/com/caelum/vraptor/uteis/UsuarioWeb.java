@@ -12,8 +12,8 @@ public class UsuarioWeb implements Serializable {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
-
+	private static final long serialVersionUID = -176196399111539118L;
+	
 	private Usuario logado;
 
 	public void login(Usuario usuario) {

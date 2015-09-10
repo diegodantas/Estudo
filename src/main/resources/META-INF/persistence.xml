@@ -5,6 +5,7 @@
 	<persistence-unit name="default">
 		<class>br.com.caelum.vraptor.model.Estudo</class>
 		<class>br.com.caelum.vraptor.model.Usuario</class>
+		<class>br.com.caelum.vraptor.model.Preenchimento</class>
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
 			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/vraptor4" />

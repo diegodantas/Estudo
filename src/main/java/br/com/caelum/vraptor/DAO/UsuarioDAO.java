@@ -28,7 +28,7 @@ public class UsuarioDAO {
 	 */
 
 	public void cadastrarUsuario(Usuario usuario) {
-		entityManager.persist(usuario);
+		entityManager.merge(usuario);
 	}
 	
 	/*
@@ -88,7 +88,7 @@ public class UsuarioDAO {
 		session = entityManager.unwrap(Session.class);
 
 		return (Usuario) session.createCriteria(Usuario.class)
-				.add(Restrictions.eq("nome", usuario.getNome()))
+				.add(Restrictions.eq("usuario", usuario.getUsuario()))
 				.add(Restrictions.eq("senha", usuario.getSenha()))
 				.uniqueResult();
 	}

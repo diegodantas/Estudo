@@ -36,9 +36,7 @@ public class Intersept {
     		result.redirectTo(IndexController.class).index();
     		return;
     	}
-    	
         stack.next(); // continua a execução
-
     }
     
     

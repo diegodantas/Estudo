@@ -19,6 +19,7 @@ public class Usuario implements Serializable {
 	private int Id;
 	
 	private String nome;
+	private String usuario;
 	private String senha;
 	private boolean status;
 	public int getId() {
@@ -44,6 +45,12 @@ public class Usuario implements Serializable {
 	}
 	public void setStatus(boolean status) {
 		this.status = status;
+	}
+	public String getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
 	}
 
 }

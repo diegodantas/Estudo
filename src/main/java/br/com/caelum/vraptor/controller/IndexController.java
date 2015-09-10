@@ -24,55 +24,62 @@ public class IndexController {
 	private UsuarioDAO usuarioDao;
 	@Inject
 	private Validator validator;
-	
-	
+
 	/*
-	 *A annotation "Public" faz com que o metodo anotado com ela seja acessado sem efetuar o login
+	 * A annotation "Public" faz com que o metodo anotado com ela seja acessado
+	 * sem efetuar o login
 	 */
-	
+
 	/*
-	 * Metodo que renderiza a tela de login caso não tenha usuario logado no momento
+	 * Metodo que renderiza a tela de login caso não tenha usuario logado no
+	 * momento
 	 */
-	
+
 	@Public
 	@Path("/")
 	public void index() {
 
-		/*result.include("variable", "VRaptor!");*/
-		if(usuarioWeb.isLogado()){
-			result.redirectTo(TesteController.class).lista();
+		/* result.include("variable", "VRaptor!"); */
+		if (usuarioWeb.isLogado()) {
+			result.redirectTo(UsuarioController.class).lista();
 		}
 
 	}
-	
+
 	/*
 	 * Faz as verificações para efetuar o login do usuario
 	 */
 
 	@Public
-	@Post("/Login")
+	@Post("/login")
 	public void login(Usuario usuario) {
+		try {
+			Usuario carregado = usuarioDao.carrega(usuario);
 
-		Usuario carregado = usuarioDao.carrega(usuario);
+			if (carregado == null) {
+				validator.add(new SimpleMessage(usuario.getUsuario(),
+						"Login e/ou senha inválidos"));
+			}
 
-		if (carregado == null) {
-			validator.add(new SimpleMessage(usuario.getNome(),
-					"Login e/ou senha inválidos"));
+			validator.onErrorUsePageOf(IndexController.class).index();
+
+			usuarioWeb.login(carregado);
+			result.include("usuarios", usuarioWeb.getNome());
+			result.redirectTo(UsuarioController.class).lista();
+
+		} catch (Exception e) {
+			result.redirectTo(IndexController.class).index();
+			// TODO: handle exception
 		}
 
-		validator.onErrorUsePageOf(IndexController.class).index();
-
-		usuarioWeb.login(carregado);
-
-		result.redirectTo(TesteController.class).lista();
 	}
-	
+
 	/*
 	 * Realiza p logout do usuario
 	 */
-	
+
 	@Path("/logout")
-	public void logout(){
+	public void logout() {
 		usuarioWeb.logout();
 		result.redirectTo(this).index();
 	}

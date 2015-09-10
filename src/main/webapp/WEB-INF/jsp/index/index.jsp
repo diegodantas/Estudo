@@ -17,10 +17,10 @@
 
 	<div class="container">
 
-		<form class="form-signin" action="/Estudo/Login" method="post">
+		<form class="form-signin" action="/Estudo/login" method="post">
 			<h2 class="form-signin-heading">Login</h2>
 			<label for="inputUsuario" class="sr-only">Usuario</label> <input
-				type="text" name="usuario.nome" id="inputUsuario"
+				type="text" name="usuario.usuario" id="inputUsuario"
 				class="form-control" placeholder="Usuario" required autofocus>
 			<label for="inputSenha" class="sr-only">Senha</label> <input
 				type="password" name="usuario.senha" id="inputSenha"
