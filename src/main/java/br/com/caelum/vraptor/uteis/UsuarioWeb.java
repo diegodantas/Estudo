@@ -3,10 +3,12 @@ package br.com.caelum.vraptor.uteis;
 import java.io.Serializable;
 
 import javax.enterprise.context.SessionScoped;
+import javax.inject.Named;
 
 import br.com.caelum.vraptor.model.Usuario;
 
 @SessionScoped
+@Named("usuarioweb")
 public class UsuarioWeb implements Serializable {
 
 	/**

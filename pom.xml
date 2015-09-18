@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>br.com.diego</groupId>
@@ -14,6 +15,7 @@
 	</properties>
 
 	<dependencies>
+
 		<dependency>
 			<groupId>br.com.caelum</groupId>
 			<artifactId>vraptor</artifactId>
@@ -25,20 +27,20 @@
 			<artifactId>weld-servlet-core</artifactId>
 			<version>${weld.version}</version>
 		</dependency>
-		
-        <dependency>
-            <groupId>org.jboss.weld</groupId>
-            <artifactId>weld-core-impl</artifactId>
-            <version>${weld.version}</version>
-        </dependency>
 
 		<dependency>
-		    <groupId>javax.el</groupId>
-		    <artifactId>el-api</artifactId>
-		    <version>2.2</version>
-		    <scope>provided</scope>
+			<groupId>org.jboss.weld</groupId>
+			<artifactId>weld-core-impl</artifactId>
+			<version>${weld.version}</version>
 		</dependency>
-		
+
+		<dependency>
+			<groupId>javax.el</groupId>
+			<artifactId>el-api</artifactId>
+			<version>2.2</version>
+			<scope>provided</scope>
+		</dependency>
+
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator-cdi</artifactId>
@@ -57,7 +59,7 @@
 			<version>3.1.0</version>
 			<scope>provided</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
@@ -87,6 +89,14 @@
 			<artifactId>vraptor-jpa</artifactId>
 			<version>4.0.2</version>
 		</dependency>
+
+		<dependency>
+			<groupId>opensymphony</groupId>
+			<artifactId>sitemesh</artifactId>
+			<version>2.4.2</version>
+		</dependency>
+
+
 	</dependencies>
 
 	<build>
@@ -144,7 +154,8 @@
 						<configuration>
 							<target>
 								<copy file="${basedir}/pom-dist.xml" todir="${project.build.directory}" />
-								<replace file="${project.build.directory}/pom-dist.xml" token="VRAPTOR_VERSION_HERE" value="${project.version}" />
+								<replace file="${project.build.directory}/pom-dist.xml"
+									token="VRAPTOR_VERSION_HERE" value="${project.version}" />
 							</target>
 						</configuration>
 						<goals>

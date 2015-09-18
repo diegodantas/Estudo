@@ -3,6 +3,7 @@ package br.com.caelum.vraptor.controller;
 import javax.inject.Inject;
 
 import br.com.caelum.vraptor.Controller;
+import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
@@ -58,8 +59,8 @@ public class UsuarioController {
 	}
 
 	/* Update */
-	@Path("/usuario/atualiza/{id}")
-	public void update(Integer id) {
+	@Get("/usuario/atualiza/{id}")
+	public void update(int id) {
 		// Usuario usuario = new Usuario();
 		result.include("usuario", dao.listarUsuario(id));
 		result.redirectTo(UsuarioController.class).atualiza();

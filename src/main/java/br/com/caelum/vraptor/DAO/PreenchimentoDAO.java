@@ -1,16 +1,18 @@
 package br.com.caelum.vraptor.DAO;
 
+import java.lang.ProcessBuilder.Redirect;
 import java.util.List;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.xml.crypto.dsig.keyinfo.RetrievalMethod;
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Restrictions;
 
 import br.com.caelum.vraptor.model.Preenchimento;
-import br.com.caelum.vraptor.model.Usuario;
 
 public class PreenchimentoDAO {
 	
@@ -21,14 +23,37 @@ public class PreenchimentoDAO {
 
 	private Criteria criteria;
 	
-	private Preenchimento preenchimento;
+	private	Preenchimento preenchimento;
 	
 	@SuppressWarnings("unchecked")
-	public List<Usuario> listarTodosPreenchimento() {
+	public List<Preenchimento> listarTodosPreenchimento() {
 		session = entityManager.unwrap(Session.class);
 
 		criteria = this.session.createCriteria(Preenchimento.class);
-		return criteria.addOrder(Order.asc("id")).list();
+		return criteria.addOrder(Order.asc("id")).list(); //.add(Restrictions.isNotNull())
+	}
+	
+	public Preenchimento listarPreenchimento(Integer id) {
+		return setPreenchimento(entityManager.find(Preenchimento.class, id));
+	}
+
+	public void atualizaPreenchimento(Preenchimento preenchido) {
+		entityManager.merge(preenchido);		
+	}
+
+	/**
+	 * @return the preenchimento
+	 */
+	public Preenchimento getPreenchimento() {
+		return preenchimento;
+	}
+
+	/**
+	 * @param preenchimento the preenchimento to set
+	 */
+	public Preenchimento setPreenchimento(Preenchimento preenchimento) {
+		this.preenchimento = preenchimento;
+		return preenchimento;
 	}
 	
 	

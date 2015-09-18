@@ -23,40 +23,29 @@ public class Preenchimento implements Serializable {
 	@ManyToOne
 	private Usuario usuario;
 	
-	@Column(nullable=true)
+	@Column(nullable=false)
 	private double jan;
-	
-	@Column(nullable=true)
+	@Column(nullable=false)
 	private double fev;
-	
-	@Column(nullable=true)
+	@Column(nullable=false)
 	private double mar;
-	
-	@Column(nullable=true)
+	@Column(nullable=false)
 	private double abr;
-	
-	@Column(nullable=true)
+	@Column(nullable=false)
 	private double mai;
-	
-	@Column(nullable=true)
+	@Column(nullable=false)
 	private double jun;
-	
-	@Column(nullable=true)
+	@Column(nullable=false)
 	private double jul;
-	
-	@Column(nullable=true)
+	@Column(nullable=false)
 	private double ago;
-	
-	@Column(nullable=true)
+	@Column(nullable=false)
 	private double set;
-
-	@Column(nullable=true)
+	@Column(nullable=false)
 	private double out;
-
-	@Column(nullable=true)
+	@Column(nullable=false)
 	private double nov;
-
-	@Column(nullable=true)
+	@Column(nullable=false)
 	private double dez;
 	
 	
@@ -146,7 +135,7 @@ public class Preenchimento implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "Preenchimento [jan=" + jan + ", fev=" + fev + ", mar=" + mar
+		return "dados [jan=" + jan + ", fev=" + fev + ", mar=" + mar
 				+ ", abr=" + abr + ", mai=" + mai + ", jun=" + jun + ", jul="
 				+ jul + ", ago=" + ago + ", set=" + set + ", out=" + out
 				+ ", nov=" + nov + ", dez=" + dez + "]";
