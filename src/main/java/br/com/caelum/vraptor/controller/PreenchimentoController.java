@@ -14,7 +14,6 @@ import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.DAO.PreenchimentoDAO;
 import br.com.caelum.vraptor.model.Char;
 import br.com.caelum.vraptor.model.Preenchimento;
-import br.com.caelum.vraptor.model.Usuario;
 
 @Controller
 public class PreenchimentoController {

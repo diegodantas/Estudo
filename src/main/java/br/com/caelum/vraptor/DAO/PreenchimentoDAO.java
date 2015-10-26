@@ -1,16 +1,13 @@
 package br.com.caelum.vraptor.DAO;
 
-import java.lang.ProcessBuilder.Redirect;
 import java.util.List;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import javax.xml.crypto.dsig.keyinfo.RetrievalMethod;
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Order;
-import org.hibernate.criterion.Restrictions;
 
 import br.com.caelum.vraptor.model.Preenchimento;
 
